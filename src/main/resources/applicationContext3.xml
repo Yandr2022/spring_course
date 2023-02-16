@@ -6,16 +6,6 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
-<context:property-placeholder location="classpath:myApp.properties"/>
-    <bean id="myPet"
-          class="com.example.spring_course.spring_introduction.Cat">
-    </bean>
-
-    <bean id="myPerson"
-          class="com.example.spring_course.spring_introduction.Person">
-        <property name="pet" ref="myPet"></property>
-        <property name="surname" value="${person.surname}"></property>
-        <property name="age" value="${person.age}"></property>
-    </bean>
+<context:component-scan base-package="com.example.spring_course.spring_introduction"/>
 
 </beans>
