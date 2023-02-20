@@ -7,8 +7,20 @@ import org.springframework.stereotype.Component;
 public class Book {
     @Value("MyBook")
     private String name;
+    @Value("MyAuthor")
+    private String author;
+    @Value("2023")
+    private int yearOfPublication;
 
     public String getName() {
         return name;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public int getYearOfPublication() {
+        return yearOfPublication;
     }
 }
