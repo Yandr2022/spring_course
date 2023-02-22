@@ -1,8 +1,10 @@
 package com.example.spring_course.aop;
 
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
-
+@Component
 public class University {
     private List<Student> students = new ArrayList<>();
 
@@ -16,6 +18,8 @@ public class University {
     }
 
     public List<Student> getStudents() {
+        System.out.println("getStudents() start");
+//        System.out.println(students.get(3));
         System.out.println("Information from method getStudents:\n" + students);
         return students;
     }
