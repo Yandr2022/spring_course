@@ -10,10 +10,9 @@ public class UnivLibrary {
         System.out.println("--------------------------------------------------------------------------");
     }
 
-    public void returnBook() {
+    public String returnBook() {
         System.out.println("We return book to University Library");
-        System.out.println("--------------------------------------------------------------------------");
-
+        return "MyBook";
     }
 
     public void addBook(String person_name, Book book) {
