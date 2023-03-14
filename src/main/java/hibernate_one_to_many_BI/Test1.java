@@ -16,15 +16,24 @@ public class Test1 {
             session = factory.getCurrentSession();
 //            Department department = new Department("IT", 300, 1200);
 //            Employee emp1 = new Employee("Ivan", "Smirnov", 800);
-//            Employee emp2 = new Employee("Igor", "Sidorov", 600);
+//            Employee emp2 = new Employee("Igor", "Sidorov", 300);
+//            Employee emp3 = new Employee("Maria", "Petrova", 1500);
 //            department.addEmployeeToDepartment(emp1);
 //            department.addEmployeeToDepartment(emp2);
+//            department.addEmployeeToDepartment(emp3);
 //            session.beginTransaction();
 //            session.save(department);
+//            session.beginTransaction();
+//            Employee employee = session.get(Employee.class,4);
+//            session.delete(employee);
             session.beginTransaction();
-            Employee employee = session.get(Employee.class,4);
-            session.delete(employee);
+            System.out.println("Get department");
+            Department department = session.get(Department.class, 4);
+            System.out.println("Show department\n" + department);
+            System.out.println("Loading employees of department" );
+            department.getEmps().get(0);
             session.getTransaction().commit();
+            System.out.println("Show employees of department\n" + department.getEmps());
             System.out.println("Done!!!");
         } finally {
             session.close();
